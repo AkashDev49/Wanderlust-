@@ -93,7 +93,8 @@
                                                             <%= review.comment %>
                                                         </p>
 
-                                                        <% if (currUser && listing.owner._id.equals(currUser._id)) { %>
+                                                        <% if (currUser &&
+                                                            review.author._id.toString()===currUser._id.toString()) { %>
                                                             <form
                                                                 action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
                                                                 method="POST" class="mb-0">
